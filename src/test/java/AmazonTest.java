@@ -29,4 +29,9 @@ public class AmazonTest {
         driver.get("https://www.google.com");
     }
 
+    @Test
+    public void testYoutube() {
+        driver.get("https://www.youtube.com");
+    }
+
 }
