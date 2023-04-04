@@ -22,9 +22,25 @@ public class AmazonTest {
     }
 
     @Test
-    public void testAmazon() {
+    public void testAmazon1() {
+        // test search
         String keyword = "iPhone 13";
         HomePage homePage = new HomePage(driver);
+        //test cookies
+        homePage.closeCookiePopup();
+        //test click toutes
+        homePage.goToGamesAndConsolesPage();
+
+   /* @Test
+    public void testAmazon1() {
+        // test search
+        String keyword = "iPhone 13";
+        HomePage homePage = new HomePage(driver);
+        homePage.closeCookiePopup();
         homePage.search(keyword);
+    }*/
+
+
+
     }
 }
