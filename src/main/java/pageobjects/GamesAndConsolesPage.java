@@ -12,11 +12,14 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import java.time.Duration;
 
 public class GamesAndConsolesPage {
-    static WebDriver driver;
+    WebDriver driver;
+    public GamesAndConsolesPage (WebDriver driver) {
+        this.driver = driver;
+    }
     final static int TIMEOUT_SIDE_PANEL = 10;
     static String firstItemExpected = "The Legend of Zelda : Tears of the Kingdom";
     public void OpenBestSeller(int index) {
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(TIMEOUT_SIDE_PANEL ));
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(TIMEOUT_SIDE_PANEL));
         WebElement proposalItem = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("[cel_widget_id=handsfree-browse_OctopusBestSellerAsin] li .a-color-base"))); // [data-cel-widget='handsfree-browse_OctopusBestSellerAsin'] > div div ul li span.a-list-item
         String firstItemActual = proposalItem.getText();
 

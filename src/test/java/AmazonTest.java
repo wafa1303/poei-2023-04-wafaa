@@ -43,7 +43,7 @@ public class AmazonTest {
     }*/
 
         //test page object "GamesAndConsolesPage"
-        GamesAndConsolesPage gamesAndConsolesPage = new GamesAndConsolesPage();
+        GamesAndConsolesPage gamesAndConsolesPage = new GamesAndConsolesPage(driver);
         gamesAndConsolesPage.OpenBestSeller(1);
 
 
