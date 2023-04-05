@@ -13,7 +13,7 @@ public class HomePage {
 
     By searchBarLocator = By.cssSelector("#twotabsearchtextbox");
     WebDriver driver;
-    final static int TIMEOUT_SIDE_PANEL = 5;
+    final static int TIMEOUT_SIDE_PANEL = 10;
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
@@ -39,7 +39,11 @@ public class HomePage {
     WebElement jeuxVideosEtConsoles = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("a.hmenu-item[data-ref-tag=nav_em_1_1_1_17]")));
         jeuxVideosEtConsoles.click();
 
+
         //Select tous les jeux videos
         driver.findElement(By.cssSelector("ul.hmenu.hmenu-visible.hmenu-translateX > li a[class='hmenu-item']")).click(); // Select 'Tous les jeux video'
+
     }
+
+
 }

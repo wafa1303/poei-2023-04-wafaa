@@ -3,7 +3,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import pageobjects.GamesAndConsolesPage;
 import pageobjects.HomePage;
+
+import java.lang.module.FindException;
 
 public class AmazonTest {
 
@@ -16,15 +19,14 @@ public class AmazonTest {
         driver.manage().window().maximize();
     }
 
-    @AfterMethod
+    /*@AfterMethod
     public void teardown() {
         driver.quit();
-    }
+    }*/
 
     @Test
     public void testAmazon1() {
         // test search
-        String keyword = "iPhone 13";
         HomePage homePage = new HomePage(driver);
         //test cookies
         homePage.closeCookiePopup();
@@ -39,6 +41,10 @@ public class AmazonTest {
         homePage.closeCookiePopup();
         homePage.search(keyword);
     }*/
+
+        //test page object "GamesAndConsolesPage"
+        GamesAndConsolesPage gamesAndConsolesPage = new GamesAndConsolesPage();
+        gamesAndConsolesPage.OpenBestSeller(1);
 
 
 
