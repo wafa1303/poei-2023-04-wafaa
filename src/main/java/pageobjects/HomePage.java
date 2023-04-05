@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -12,6 +13,9 @@ import java.time.Duration;
 public class HomePage {
 
     By searchBarLocator = By.cssSelector("#twotabsearchtextbox");
+    By listAndAccountButtonBy = By.cssSelector("#nav-link-accountList");
+
+    By signInButtonBy = By.cssSelector(".nav-action-button");
     WebDriver driver;
     final static int TIMEOUT_SIDE_PANEL = 10;
 
@@ -44,6 +48,22 @@ public class HomePage {
         driver.findElement(By.cssSelector("ul.hmenu.hmenu-visible.hmenu-translateX > li a[class='hmenu-item']")).click(); // Select 'Tous les jeux video'
 
     }
+
+    // survole de la souris a mettre dans l'exemple de l iphone
+    public void createNewAccount() {
+        Actions actions = new Actions(driver);
+
+        WebElement buttonAccount = driver.findElement(listAndAccountButtonBy);
+        actions.moveToElement(buttonAccount);
+        actions.perform();
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        wait.until(ExpectedConditions.elementToBeClickable(signInButtonBy)).click();
+    }
+
+
+
+
 
 
 }
